@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report:Report xmlns:rtl="http://www.4js.com/2004/RTL" xmlns:report="http://www.4js.com/2007/REPORT" xmlns="http://www.4js.com/2004/PXML" gstVersion="30a05" version="6.00">
+    <report:Settings RWPageWidth="a4width" RWPageLength="a4length" RWLeftMargin="1.3cm" RWTopMargin="1.3cm" RWRightMargin="1.3cm" RWBottomMargin="1.3cm">
+        <report:FormatList>
+            <report:Format-SVG/>
+            <report:Format-PDF/>
+            <report:Format-image/>
+        </report:FormatList>
+    </report:Settings>
+    <report:Data RWDataLocation="embedded_pdf_viewer.rdd" RWFglReportName="pdf2svg"/>
+    <report:Conflicts/>
+    <rtl:stylesheet>
+        <PXML>
+            <rtl:match name="Report" nameConstraint="Report" minOccurs="1" maxOccurs="1">
+                <rtl:match name="Group filename" nameConstraint="Group" minOccurs="0" maxOccurs="unbounded">
+                    <rtl:match name="OnEveryRow" nameConstraint="OnEveryRow" minOccurs="0" maxOccurs="unbounded">
+                        <MINIPAGE name="Page Root" width="max" length="max">
+                            <rtl:input-variable name="filename" type="FGLString" expectedLocation="expectedHere"/>
+                            <PDFBOX name="PDFBox" length="min" floatingBehavior="enclosed" url="{{filename.trim()}}"/>
+                        </MINIPAGE>
+                    </rtl:match>
+                </rtl:match>
+            </rtl:match>
+        </PXML>
+    </rtl:stylesheet>
+</report:Report>

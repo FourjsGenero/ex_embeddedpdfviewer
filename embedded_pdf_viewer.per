@@ -1,0 +1,30 @@
+LAYOUT (TEXT="Embedded PDF Viewer", MINWIDTH=80, MINHEIGHT=25)
+VBOX
+GRID
+{
+File  [f01                                                         ][b00        ]
+}
+END
+GRID
+{
+[b01: :b02: :b03: :b04: :b05]
+[sl01                       ]
+[lb01                       ]
+[i01                        ]
+}
+END
+END
+END
+ATTRIBUTES
+BUTTONEDIT f01 = formonly.filename, SCROLL, ACTION=choose, IMAGE="fa-caret-down";
+BUTTON b00: view, TEXT="View", IMAGE="fa-file-pdf-o";
+IMAGE i01 = formonly.pdf, STRETCH=BOTH, AUTOSCALE;
+LABEL lb01 = formonly.xofy, JUSTIFY=CENTER;
+
+BUTTON b01: first, TEXT="First", IMAGE="fa-fast-backward";
+BUTTON b02: previous, TEXT="Previous", IMAGE="fa-backward";
+BUTTON b03: go, TEXT="Go", IMAGE="fa-arrows-alt";
+BUTTON b04: next, TEXT="Next", IMAGE="fa-forward";
+BUTTON b05: last, TEXT="Last", IMAGE="fa-fast-forward";
+SLIDER sl01= formonly.current_page, VALUEMIN=1, VALUEMAX=2;
+
