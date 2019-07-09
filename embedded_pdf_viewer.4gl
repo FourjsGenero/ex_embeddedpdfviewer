@@ -18,7 +18,7 @@ DEFINE save_page INTEGER
 
 
     #comment out test cases
-    LET filename = "http://4js.com/mirror/documentation.php?s=genero&f=fjs-genero-3.00.XX-PlatformsDb.pdf"
+    LET filename = "http://4js.com/mirror/documentation.php?s=genero&f=fjs-genero-3.20.XX-PlatformsDb.pdf"
 
     INPUT BY NAME filename, current_page ATTRIBUTES(UNBUFFERED, WITHOUT DEFAULTS=TRUE, CANCEL=FALSE, ACCEPT=FALSE)
         BEFORE INPUT
@@ -92,10 +92,12 @@ DEFINE save_page INTEGER
                 ON ACTION c2 ATTRIBUTES(TEXT="OrderReport")
                     LET filename = "OrderReport.pdf"
                 ON ACTION c3 ATTRIBUTES(TEXT="Supported Systems Document")
-                    LET filename = "http://4js.com/mirror/documentation.php?s=genero&f=fjs-genero-3.00.XX-PlatformsDb.pdf"
+                    LET filename = "http://4js.com/mirror/documentation.php?s=genero&f=fjs-genero-3.20.XX-PlatformsDb.pdf"
                 ON ACTION c4 ATTRIBUTES(TEXT="Sales Brochure")
                     LET filename = "http://4js.com/files/documents/products/genero/genero_brochure.pdf"
-               
+
+                ON ACTION c5 ATTRIBUTES(TEXT="Genero PDF")
+                    LET filename = "Genero.PDF"
                 ON ACTION close
                     EXIT MENU
             END MENU
