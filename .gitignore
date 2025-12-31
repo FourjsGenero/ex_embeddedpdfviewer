@@ -5,3 +5,5 @@ bin
 *.4pwcfg
 *.4pdb
 .DS_Store
+*.png
+*.rdd
